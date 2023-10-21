@@ -1,0 +1,74 @@
+{
+  "name": "svelte-viem",
+  "version": "3.2.0",
+  "description": "viem library as a collection of stores for Svelte or SvelteKit & related UX components.",
+  "author": {
+    "name": "Christophe Le Bars",
+    "email": "<clb@toort.net>"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": "clbrge/svelte-viem",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "svelte": "src/stores.js",
+  "types": "dist/svelte-viem.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "main": "./dist/index.cjs",
+      "module": "./dist/index.mjs",
+      "svelte": "./src/stores.js",
+      "types": "./dist/svelte-viem.d.ts"
+    },
+    "./components": {
+      "import": "./src/components/index.js",
+      "svelte": "./src/components/index.js"
+    }
+  },
+  "scripts": {
+    "update-chains": "node ./scripts/update-chains.mjs",
+    "format": "prettier --plugin-search-dir . --write .",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "@metamask/jazzicon": "^2.0.0",
+    "ethereum-blockies-base64": "^1.0.2",
+    "svelte": "3.x",
+    "svelte-proxied-store": "^2.0.3",
+    "viem": "^1.16.6"
+  },
+  "devDependencies": {
+    "lint-staged": "^13.2.2",
+    "prettier-config-standard": "^5.0.0",
+    "release-it": "^15.10.3",
+    "rollup": "3.21.5",
+    "rollup-plugin-dts": "^5.3.0",
+    "svelte": "^3.59.0"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": "prettier --write"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "sveltekit",
+    "svelte",
+    "sapper",
+    "ethereum",
+    "viem",
+    "store"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ]
+}
